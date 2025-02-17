@@ -12,7 +12,7 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Enable JSON parsing
-app.use(cors());
+app.use(cors({ origin: 'https://go-together-zeta.vercel.app/' }));
 
 app.use(bodyParser.json({extended : true}))
 app.use(bodyParser.urlencoded({extended : true}))
