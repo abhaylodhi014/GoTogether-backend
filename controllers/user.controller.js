@@ -2,7 +2,7 @@
 import { request, response } from "express";
 import User from "../models/user.models.js";
 import GoogleUser from "../models/gogleUser.models.js";
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 import  JWT  from "jsonwebtoken";
 import dotenv from "dotenv"
 
