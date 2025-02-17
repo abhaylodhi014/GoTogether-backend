@@ -12,21 +12,15 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Enable JSON parsing
-// Enable CORS for specific origin
-const allowedOrigins = ['https://go-together-zeta.vercel.app'];
-app.use(cors({
-  origin: allowedOrigins,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));;
+app.use(cors({ origin: 'https://go-together-zeta.vercel.app' }));
 
 app.use(bodyParser.json({extended : true}))
 app.use(bodyParser.urlencoded({extended : true}))
 //agar url mai space hai tab bhi ye clear work karega
-app.use('/' , Router)
+app.use('/api' , Router)
 
 // Start the server
-const PORT =process.env.PORT ||  8000;
+const PORT =process.env.PORT ||  10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 connectDB();
 
