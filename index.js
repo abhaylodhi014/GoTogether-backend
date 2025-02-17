@@ -12,7 +12,13 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Enable JSON parsing
-app.use(cors({ origin: 'https://go-together-zeta.vercel.app/' }));
+// Enable CORS for specific origin
+const allowedOrigins = ['https://go-together-zeta.vercel.app'];
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));;
 
 app.use(bodyParser.json({extended : true}))
 app.use(bodyParser.urlencoded({extended : true}))
