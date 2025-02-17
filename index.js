@@ -23,7 +23,7 @@ app.use(cors({
 app.use(bodyParser.json({extended : true}))
 app.use(bodyParser.urlencoded({extended : true}))
 //agar url mai space hai tab bhi ye clear work karega
-app.use('/api' , Router)
+app.use('/' , Router)
 
 // Start the server
 const PORT =process.env.PORT ||  8000;
